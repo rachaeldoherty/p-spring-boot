@@ -1,0 +1,8 @@
+.jumbotron{
+	position relative; 
+	background: url("/images/Titanic Vintage Pic.JPG") center center; 
+	width: 100%;
+	height: 40%;
+	background-size: cover; 
+	overflow: hidden;
+}
