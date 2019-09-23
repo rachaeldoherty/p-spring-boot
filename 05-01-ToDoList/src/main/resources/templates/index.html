@@ -18,31 +18,35 @@
 <title></title>
 </head>
 
+
 <body>
-<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-  <ul class="navbar-nav">
-    <li class="nav-item active">
-      <a class="nav-link" href="/">ToDo</a>
-    </li>
-    <li class="nav-item">
-  <a class="nav-link" href="/CompletedList">Completed</a>
-    </li>
-  </ul>
-</nav>
+	<nav class="navbar navbar-expand-sm">
+		<ul class="navbar-nav">
+			<li class="nav-item active"><a class="nav-link" href="/"> <img
+					src="https://image.flaticon.com/icons/svg/951/951971.svg"
+					width="50px" height="50px"></img>
+			</a></li>
+			<li class="nav-item"><a class="nav-link" href="/CompletedList">
+					<img src="https://image.flaticon.com/icons/svg/61/61222.svg"
+					width="50px" height="50px"></img>
+			</a></li>
+		</ul>
+	</nav>
 
 	<div class="jumbotron text-center">
 
-		<h1> To Do List
-		<!--   <img src=" " height="60px" width="60px"
-alt="To Do List">-->
-		</h1>
-		
-		<br />
+		<img
+			src="https://todolist.org.uk/wp-content/uploads/2017/12/todolistlogo-1.png"
+			width="550px" height="250px"></img>
+
 
 	</div>
 
 
 	<div class="container">
+		<img src="https://www.freeiconspng.com/uploads/clean-home-png-12.png"
+			width="50px" height="50px"></img>
+		<h1 th:text=${message}></h1>
 		<p></p>
 		<table class="table table-striped">
 			<thead>
@@ -55,17 +59,17 @@ alt="To Do List">-->
 					<th>Priority</th>
 				</tr>
 			</thead>
- 			<tbody> 
- 					<tr th:each="toDoList: ${ToDoList}"> 
- 					<td th:text="${toDoList.name}"></td> 
-					<td th:text="${toDoList.description}"></td> 
- 					<td th:text="${toDoList.datecompletion}"></td> 
+			<tbody>
+				<tr th:each="toDoList: ${ToDoList}">
+					<td th:text="${toDoList.name}"></td>
+					<td th:text="${toDoList.description}"></td>
+					<td th:text="${toDoList.datecompletion}"></td>
 					<td th:text="${toDoList.completedOrNot}"></td>
 					<td th:text="${toDoList.userName}"></td>
 					<td th:text="${toDoList.priority}"></td>
 
-				</tr> 
- 			</tbody> 
+				</tr>
+			</tbody>
 		</table>
 
 
