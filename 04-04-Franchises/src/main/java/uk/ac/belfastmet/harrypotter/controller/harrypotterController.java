@@ -21,14 +21,18 @@ public class harrypotterController {
 		logger.info("An INFO Message");
 		return "index";
 		}
-	
+
+	/**
+	 * 
+	 * @param model give a value to the word model, when it sees the word movies,
+	 * it retrieves the harry potter movies information. 
+	 * @return Harry Potter Information to the Harry Potter Page
+	 */
 	@GetMapping("/HarryPotter")
 	public String HomePage(Model model) {
 		
 		harrypotterService harrypotterService = new harrypotterService();
 		model.addAttribute("movies", harrypotterService.getharryPotterMovies());
-		model.addAttribute("numberofbooks","7 Books");
-		model.addAttribute("numberofmovies","8 Movies");
 		return "harrypotter";
 	}
 	
