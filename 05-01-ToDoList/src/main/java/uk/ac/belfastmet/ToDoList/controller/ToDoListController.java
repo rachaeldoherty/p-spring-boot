@@ -33,5 +33,12 @@ public class ToDoListController {
 		model.addAttribute("message", "Spring Clean Time - All Done!");
 		return "completed";
 	}
+	
+	@RequestMapping(value = "login", method = RequestMethod.GET)
+	public String loginPage(Model model) {
+
+		logger.info("Here is a warning message");
+		return "login";
+	}
 }
 
