@@ -59,7 +59,7 @@
 				<tr th:each="toDoList: ${ToDoList}">
 					<td th:text="${toDoList.name}"></td>
 					<td th:text="${toDoList.description}"></td>
-					<td th:text="${toDoList.datecompletion}"></td>
+					<td th:text="${toDoList.dateCompletion}"></td>
 					<td th:text="${toDoList.completedOrNot}"></td>
 					<td th:text="${toDoList.userName}"></td>
 					<td th:text="${toDoList.priority}"></td>
@@ -67,10 +67,9 @@
 				</tr>
 			</tbody>
 		</table>
-<img src="https://user-images.githubusercontent.com/15840617/31617371-ae68471e-b297-11e7-9981-269c9bb17330.png"
-			width="150px" height="150px" align = right></img>
-
-
+		<img
+			src="https://user-images.githubusercontent.com/15840617/31617371-ae68471e-b297-11e7-9981-269c9bb17330.png"
+			width="150px" height="150px" align=right></img>
 	</div>
 
 </body>

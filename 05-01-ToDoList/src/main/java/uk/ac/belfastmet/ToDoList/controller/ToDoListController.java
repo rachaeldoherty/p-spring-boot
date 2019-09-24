@@ -14,6 +14,9 @@ public class ToDoListController {
 
 	Logger logger = LoggerFactory.getLogger(ToDoListController.class);
 
+	/*
+	 * 
+	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String homePage(Model model) {
 
@@ -30,7 +33,7 @@ public class ToDoListController {
 		ToDoListService toDoListService = new ToDoListService();
 		logger.info("Here is a warning message");
 		model.addAttribute("ToDoList", toDoListService.getcompletedList());
-		model.addAttribute("message", "Spring Clean Time - All Done!");
+		model.addAttribute("message", "All Done!");
 		return "completed";
 	}
 	

@@ -5,17 +5,17 @@ public class ToDoList {
 	// instance variables
 	private String name;
 	private String description;
-	private String datecompletion;
+	private String dateCompletion;
 	private boolean completedOrNot;
 	private String userName;
 	private String priority;
 
 	// Constructors
-	public ToDoList(String name, String description, String datecompletion, boolean completedOrNot, String userName,
+	public ToDoList(String name, String description, String dateCompletion, boolean completedOrNot, String userName,
 			String priority) {
 		this.name = name;
 		this.description = description;
-		this.datecompletion = datecompletion;
+		this.dateCompletion = dateCompletion;
 		this.completedOrNot = completedOrNot;
 		this.userName = userName;
 		this.priority = priority;
@@ -38,12 +38,12 @@ public class ToDoList {
 		this.description = description;
 	}
 
-	public String getDatecompletion() {
-		return datecompletion;
+	public String getDateCompletion() {
+		return dateCompletion;
 	}
 
-	public void setDatecompletion(String datecompletion) {
-		this.datecompletion = datecompletion;
+	public void setDatecompletion(String dateCompletion) {
+		this.dateCompletion = dateCompletion;
 	}
 
 	public boolean isCompletedOrNot() {
