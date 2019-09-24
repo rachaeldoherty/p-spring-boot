@@ -17,7 +17,7 @@ public class ToDoListController {
 	/*
 	 * 
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/todo", method = RequestMethod.GET)
 	public String homePage(Model model) {
 
 		ToDoListService toDoListService = new ToDoListService();
@@ -37,7 +37,7 @@ public class ToDoListController {
 		return "completed";
 	}
 	
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String loginPage(Model model) {
 
 		logger.info("Here is a warning message");
