@@ -23,7 +23,7 @@ public class ToDoListController {
 		ToDoListService toDoListService = new ToDoListService();
 		logger.info("Here is a warning message");
 		model.addAttribute("ToDoList", toDoListService.getToDoList());
-		model.addAttribute("message", "Spring Clean Time");
+		model.addAttribute("message", "Household Chores");
 		return "index";
 	}
 
