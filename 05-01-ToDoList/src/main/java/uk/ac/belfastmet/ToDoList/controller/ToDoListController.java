@@ -37,7 +37,7 @@ public class ToDoListController {
 		return "completed";
 	}
 	
-	@RequestMapping(value = "login", method = RequestMethod.GET)
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginPage(Model model) {
 
 		logger.info("Here is a warning message");
