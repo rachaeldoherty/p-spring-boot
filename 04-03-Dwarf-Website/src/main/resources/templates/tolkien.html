@@ -46,13 +46,15 @@
 			<thead>
 				<tr>
 					<th>Name</th>
-					<th>Picture</th>
+					<th>Author</th>
+					<th>Age</th>
 				</tr>
 			</thead>
 			<tbody>
-			<tr th:each="dwarf: ${dwarfs}">
-				<td th:text="${dwarf.name}">Happy</td>
-				<td><img src=".../static/img/Thorin.png" th:src="@{/img/} + ${dwarf.image}">
+			<tr th:each="Dwarf: ${dwarfs}" th:if="${Dwarf.author}=='Tolkien'" >
+				<td th:text="${Dwarf.name}"></td>
+				<td th:text="${Dwarf.author}"></td>
+				<td th:text="${Dwarf.age}"></td>
 			</tr>
 			</tbody>
 		</table>

@@ -7,8 +7,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-
 import uk.ac.belfastmet.ToDoList.domain.ToDoList;
 import uk.ac.belfastmet.ToDoList.repository.ToDoListRepository;
 
@@ -23,11 +21,11 @@ public class ToDoListService {
 	@Autowired
 	private ToDoListRepository toDoListRepository; 
 
-		public Iterable<ToDoList> getToDoList() {
-			Iterable <ToDoList> toDoList = toDoListRepository.findAll();
-			Iterator <ToDoList> iterator = toDoList.iterator();
-			while (iterator.hasNext()) {
-				logger.info("{}", iterator.next().toString());
+	public Iterable<ToDoList> getToDoList() {
+		Iterable <ToDoList> toDoList = toDoListRepository.findAll();
+		Iterator <ToDoList> iterator = toDoList.iterator();
+		while (iterator.hasNext()) {
+			logger.info("{}", iterator.next().toString());
 		}	
 			return toDoList;
 	}

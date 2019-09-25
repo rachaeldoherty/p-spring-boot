@@ -7,24 +7,25 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Dwarf")
+@Table(name = "dwarf_people")
 public class Dwarf {
 
 	// instance variables
+	private long id; 
 	private String name;
 	private String author;
-	private String image;
+	private int age;
 
 	// Constructors
 	public Dwarf() {
-		super();
+		
 	}
 
-	public Dwarf(String name, String author, String image) {
-		super();
+	public Dwarf(String name, String author, int age) {
+
 		this.name = name;
 		this.author = author;
-		this.image = image;
+		this.age = age;
 	}
 	
 	@Id
@@ -35,7 +36,7 @@ public class Dwarf {
 	public void setId(long id) {
 		this.id = id;
 	}
-	
+	@Column(name = "name")
 	public String getName() {
 		return name;
 	}
@@ -43,7 +44,7 @@ public class Dwarf {
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	@Column(name = "author")
 	public String getAuthor() {
 		return author;
 	}
@@ -51,13 +52,15 @@ public class Dwarf {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-
-	public String getImage() {
-		return image;
+	@Column(name = "age")
+	public int getAge() {
+		return age;
 	}
 
-	public void setImage(String image) {
-		this.image = image;
+	public void setAge(int age) {
+		this.age = age;
 	}
-
+	public String toString() {
+		return this.name + " " + this.author + " " + this.age; 
+	}
 }
