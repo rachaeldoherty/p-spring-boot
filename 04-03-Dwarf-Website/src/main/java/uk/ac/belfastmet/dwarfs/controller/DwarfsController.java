@@ -14,40 +14,51 @@ import uk.ac.belfastmet.dwarfs.service.DwarfService;
 public class DwarfsController {
 	@Autowired
 	private DwarfService dwarfService;
-	
+
 	Logger logger = LoggerFactory.getLogger(DwarfsController.class);
+
 	/**
 	 * 
 	 * @param model
 	 * @return the index html page for homepage
 	 */
 	@GetMapping()
-	public String homePage(Model model){
+	public String homePage(Model model) {
 		dwarfService.getNumberofDwarfs();
 		model.addAttribute("pageTitle", "Tolkien is #1");
-		model.addAttribute("Dwarfs","We all know you are here for Tolkien");
+		model.addAttribute("Dwarfs", "We all know you are here for Tolkien");
 		return "index";
-		}
-	
+	}
+
+	/**
+	 * 
+	 * @param model
+	 * @return the index html page for disneypage
+	 */
 	@GetMapping("/disney")
 	public String disneyPage(Model model) {
 		logger.info("Here is a warning message");
 		dwarfService.getNumberofDwarfs();
 		model.addAttribute("dwarfs", dwarfService.getDisneyDwarfs());
 		model.addAttribute("pageTitle", "Tolkien is #1");
-		model.addAttribute("numberofDwarfs","7");
-		return"disney";
+		model.addAttribute("numberofDwarfs", "7");
+		return "disney";
 	}
-	
+
+	/**
+	 * 
+	 * @param model
+	 * @return the index html page for tolkienpage
+	 */
 	@GetMapping("/tolkien")
 	public String tolkienPage(Model model) {
 		dwarfService.getNumberofDwarfs();
 		logger.info("Here is a warning message");
 		model.addAttribute("dwarfs", dwarfService.getTolkienDwarfs());
 		model.addAttribute("pageTitle", "Tolkien is #1");
-		model.addAttribute("numberofDwarfs","13");
-		
-		return"tolkien";
+		model.addAttribute("numberofDwarfs", "13");
+
+		return "tolkien";
 	}
 
 }

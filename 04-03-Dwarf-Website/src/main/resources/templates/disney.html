@@ -40,7 +40,7 @@
 
 	<div class="container">
 
-		<p>This site will contain information about Dwarfs</p>
+		<p>This site will contain information about Disney's Seven Dwarfs</p>
 
 		<table class="table table-striped">
 			<thead>
@@ -51,11 +51,12 @@
 				</tr>
 			</thead>
 			<tbody>
-			<tr th:each="Dwarf: ${dwarfs}" th:if="${Dwarf.author}=='Disney'" >
-				<td th:text="${Dwarf.name}"></td>
-				<td th:text="${Dwarf.author}"></td>
-				<td th:text="${Dwarf.age}"></td>
-			</tr>
+				<!-- below is an if statement to split the table between Disney and Tolkien Dwarfs -->
+				<tr th:each="Dwarf: ${dwarfs}" th:if="${Dwarf.author}=='Disney'">
+					<td th:text="${Dwarf.name}"></td>
+					<td th:text="${Dwarf.author}"></td>
+					<td th:text="${Dwarf.age}"></td>
+				</tr>
 			</tbody>
 		</table>
 	</div>

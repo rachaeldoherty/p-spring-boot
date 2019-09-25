@@ -1,4 +1,5 @@
 package uk.ac.belfastmet.dwarfs.service;
+
 import java.util.Iterator;
 
 import org.slf4j.Logger;
@@ -11,44 +12,51 @@ import uk.ac.belfastmet.dwarfs.repository.DwarfsRepository;
 @Service
 public class DwarfService {
 	private static Logger logger = LoggerFactory.getLogger(DwarfService.class);
-	
+
 	@Autowired
-	private DwarfsRepository dwarfRepository; 
-	public Iterable<Dwarf> getNumberofDwarfs(){
+	private DwarfsRepository dwarfRepository;
+
+	public Iterable<Dwarf> getNumberofDwarfs() {
 		logger.info("# of dwarfs: {}", dwarfRepository.count());
 		Iterable<Dwarf> dwarf = dwarfRepository.findAll();
 		Iterator<Dwarf> iterator = dwarf.iterator();
-		while(iterator.hasNext()) {
-			logger.info("{}",iterator.next().toString());
+		while (iterator.hasNext()) {
+			logger.info("{}", iterator.next().toString());
 		}
 		return dwarf;
 	}
-	public Iterable<Dwarf> getDisneyDwarfs(){
+
+	/**
+	 * 
+	 * @returning DisneyDwarfs
+	 */
+	public Iterable<Dwarf> getDisneyDwarfs() {
 		logger.info("MESSGAGE HERE", dwarfRepository.count());
-		Iterable <Dwarf> disneyDwarf = dwarfRepository.findAll(); 
-		Iterator <Dwarf> iterator = disneyDwarf.iterator();
-		while(iterator.hasNext()) {
+		Iterable<Dwarf> disneyDwarf = dwarfRepository.findAll();
+		Iterator<Dwarf> iterator = disneyDwarf.iterator();
+		while (iterator.hasNext()) {
 			logger.info("{}", iterator.next().toString());
-	}
-		
-		
+		}
+
 		return disneyDwarf;
-		
-}
-	public Iterable<Dwarf> getTolkienDwarfs(){
-		Iterable <Dwarf> tolkienDwarf = dwarfRepository.findAll(); 
-		Iterator <Dwarf> iterator = tolkienDwarf.iterator();
-		while(iterator.hasNext()){
+	}
+
+	/**
+	 * 
+	 * @returning TolkienDwarfs
+	 */
+	public Iterable<Dwarf> getTolkienDwarfs() {
+		Iterable<Dwarf> tolkienDwarf = dwarfRepository.findAll();
+		Iterator<Dwarf> iterator = tolkienDwarf.iterator();
+		while (iterator.hasNext()) {
 			logger.info("{}", iterator.next().toString());
-			}
+		}
 		return tolkienDwarf;
-}
-	
-	
-	
-	//private ArrayList<Dwarf> disneyDwarfs;
-	//private ArrayList<Dwarf> tolkienDwarfs;
-	
+	}
+
+	// private ArrayList<Dwarf> disneyDwarfs;
+	// private ArrayList<Dwarf> tolkienDwarfs;
+
 //	public ArrayList<Dwarf>getDisneyDwarfs(){
 //		this.disneyDwarfs = new ArrayList<Dwarf>(); 
 //		this.disneyDwarfs.add(new Dwarf("Sleepy", "Disney", "Sleepy.png"));
@@ -60,7 +68,7 @@ public class DwarfService {
 //		this.disneyDwarfs.add(new Dwarf("Sneezy", "Disney", "Sneezy.png"));
 //				
 //		return this.disneyDwarfs; 
-		
+
 ////	}
 //	public ArrayList<Dwarf> getTolkienDwarfs(){
 //		this.tolkienDwarfs = new ArrayList<Dwarf>(); 
@@ -82,4 +90,3 @@ public class DwarfService {
 //		return this.tolkienDwarfs;
 
 }
-
