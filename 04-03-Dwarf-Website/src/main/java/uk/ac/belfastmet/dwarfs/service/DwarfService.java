@@ -13,9 +13,16 @@ import uk.ac.belfastmet.dwarfs.repository.DwarfsRepository;
 public class DwarfService {
 	private static Logger logger = LoggerFactory.getLogger(DwarfService.class);
 
+	/**
+	 * could maybe add explanation of autowired here
+	 */
 	@Autowired
 	private DwarfsRepository dwarfRepository;
 
+	/**
+	 * reutrns the entire number that is in my SQL table.
+	 * @return
+	 */
 	public Iterable<Dwarf> getNumberofDwarfs() {
 		logger.info("# of dwarfs: {}", dwarfRepository.count());
 		Iterable<Dwarf> dwarf = dwarfRepository.findAll();

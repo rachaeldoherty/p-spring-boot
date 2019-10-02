@@ -74,6 +74,7 @@ public class Dwarf {
 
 	/**
 	 * creating a string for iterator
+	 * could maybe add in here what the green triangle says on the left i.e. that the below method overrides java.lang.Object.to.String
 	 */
 	public String toString() {
 		return this.name + " " + this.author + " " + this.age;
